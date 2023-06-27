@@ -18,7 +18,7 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'handlebars')
 
 /* ROUTES */
-app.use('/views', viewsRouter)
+app.use('/', viewsRouter)
 
 const PORT = 3000
 const httpServer = app.listen(PORT, () => {
