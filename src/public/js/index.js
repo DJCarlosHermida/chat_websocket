@@ -50,7 +50,7 @@ socketClient.on('chat', mensajes => {
 socketClient.on('broadcast', usuario => {
     Toastify({
         text: `${usuario} se unió al chat`,
-        duration: 5000,
+        duration: 6000,
         gravity: "top",
         position: "right",
         style: {
