@@ -1,8 +1,16 @@
-<h4 id="usuario" style="container"></h4>
-
-<div id="chat" class="container"></div>
-<form id="formulario" class="container">
-  <input type="text" name="mensaje" id="mensaje" placeholder="text">
+<head>
+  <link rel="stylesheet" href="layouts/css/style.css">
+</head>
+<h1 style="text-align:center" >Young Chat</h1>
+<h4 id="usuario" style="container; color: red; margin-left: 50px"></h4>
+<hr>
+<div class="containerChat">
+  <div id="chat" style="text-align: center">
+  </div>
+</div>
+<form id="formulario" class="container" style="text-align: center">
+  <input type="text" name="mensaje" id="mensaje" class="mensaje" style="background-color: whitesmoke; text-align:center"
+    placeholder="text">
   <input type="submit" value="ENVIAR">
 </form>
 
@@ -15,6 +23,7 @@
   });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="/socket.io/socket.io.js"></script>
