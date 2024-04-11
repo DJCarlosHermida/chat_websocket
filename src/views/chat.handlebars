@@ -1,14 +1,15 @@
- <h4 id="usuario"></h4>
+<h4 id="usuario" style="container"></h4>
 
-<div id="chat"></div>
-<form id="formulario">
-    <input type="text" name="mensaje" id="mensaje" placeholder="text">
-    <input type="submit" value="ENVIAR">
+<div id="chat" class="container"></div>
+<form id="formulario" class="container">
+  <input type="text" name="mensaje" id="mensaje" placeholder="text">
+  <input type="submit" value="ENVIAR">
 </form>
+
 <script>
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', function () {
     let formulario = document.getElementById('formulario');
-    formulario.addEventListener('submit', function() {
+    formulario.addEventListener('submit', function () {
       formulario.reset();
     });
   });

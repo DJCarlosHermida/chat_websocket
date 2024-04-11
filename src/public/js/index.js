@@ -9,7 +9,7 @@ let usuario
 
 /* Ingresar al chat */
 Swal.fire({
-    title: 'Welcome to me',
+    title: 'Welcome to Forever Young Chat',
     text: 'Please enter your name user to continue',
     input: 'text',
     inputValidator: value => {
@@ -22,7 +22,7 @@ Swal.fire({
     tituloUsuario.innerText = usuario
     /* evento ingreso user */
     socketClient.emit('usuarioNuevo', usuario)
-    inputMensaje.reset = ' '
+    inputMensaje.value = ' '    
 })
 
 /* mensajes */
@@ -53,8 +53,7 @@ socketClient.on('broadcast', usuario => {
         duration: 6000,
         gravity: "top",
         position: "right",
-        style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        style: {background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
       }).showToast();
 })
