@@ -2,10 +2,10 @@
   "name": "chat_websocket",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "build": "node --check src/app.js",
+    "build": "node --check src/index.js && node --check src/app.js",
     "start": "node src/app.js"
   },
   "keywords": [],
