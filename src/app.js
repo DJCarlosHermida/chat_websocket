@@ -20,7 +20,7 @@ app.set('view engine', 'handlebars')
 /* ROUTES */
 app.use('/', viewsRouter)
 
-const PORT = 3000
+const PORT = Number(process.env.PORT) || 3000
 const httpServer = app.listen(PORT, () => {
     console.log(`Listen to PORT: ${PORT}`);
 })
