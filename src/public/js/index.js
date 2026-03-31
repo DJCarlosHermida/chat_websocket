@@ -105,12 +105,12 @@ const createMessageNode = (payload) => {
 
 const requestUsername = () => {
     Swal.fire({
-        title: 'Welcome to Forever Young Chat',
-        text: 'Please enter your name user to continue',
+        title: 'Chat WebSocket',
+        text: 'Ingresa tu nombre de usuario para continuar',
         input: 'text',
         inputValidator: value => {
             if (!value || isBlockedLiteral(value)) {
-                return ('you need enter a user')
+                return ('Debes ingresar un usuario')
             }
             if (usernameStartsWithDigit(value)) {
                 return 'El usuario no puede empezar por un numero'

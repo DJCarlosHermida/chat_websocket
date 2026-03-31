@@ -93,9 +93,16 @@ socketServer.on('connection', socket => {
             if (typeof ack === 'function') ack(payload)
         }
 
-        const nombre = normalizeUsername(info?.nombre, MAX_USERNAME_LENGTH)
+        // Seguridad: el nombre del emisor debe salir del estado del servidor,
+        // no del payload que envía el cliente.
+        const nombreRegistrado = connectedUsers.get(socket.id)
+        const nombre = normalizeUsername(nombreRegistrado, MAX_USERNAME_LENGTH)
         const mensaje = normalizeText(info?.mensaje, MAX_MESSAGE_LENGTH)
-        if (!nombre || !mensaje) {
+        if (!nombre) {
+            reply({ ok: false, reason: 'Debes ingresar un usuario valido' })
+            return
+        }
+        if (!mensaje) {
             reply({ ok: false, reason: 'Mensaje no valido' })
             return
         }
@@ -139,6 +146,8 @@ socketServer.on('connection', socket => {
             socket.emit('usuarioError', 'Ese usuario ya esta en uso')
             return
         }
+
+        // Permite actualizar el nombre del socket actual de forma controlada.
         connectedUsers.set(socket.id, nombreUsuario)
         emitConnectedUsers()
         socket.broadcast.emit('broadcast', nombreUsuario)
